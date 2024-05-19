@@ -1,0 +1,33 @@
+def classOrNot(variable):
+    return isinstance(variable, object)
+
+def isSingleNum(variable):
+    return isinstance(variable, (int, float))
+
+class Dog:
+    def _init_(self, name, age):
+        self.name = name
+        self.age = age
+
+    def bark(self):
+        print(f"{self.name} says woof!")
+
+
+
+input_json = 55         #single number input
+# input_json = [22,45]    #data structure input
+# input_json = Dog(name="Buddy", age=5)   #object input 
+# input_json = '{ "UserID": 25, "Email": "m@gmail.com", "Phone": "9876543210", "FirstName": "k", "LastName": "m", "Username": "km", "LanguageID": 0, "LoginAuthTypeID": 1 }' #json input
+
+if isSingleNum(input_json):
+    print("Single number")
+elif isinstance(input_json, str):
+    print("json")
+elif isinstance(input_json, list):
+    print("list")
+elif isinstance(input_json, tuple):
+    print("tuple")
+elif isinstance(input_json, set):
+    print("set")
+elif classOrNot(input_json):
+    print("Class")

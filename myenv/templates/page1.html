@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    {% with messages = get_flashed_messages() %} {% if messages %} {% for
+    message in messages %} {{ message }} {% endfor %} {% endif %} {% endwith %}
+    <ul>
+      <a href="/"> <li>Home</li></a>
+      <a href="/about"> <li>About</li></a>
+      <a href="/contact"><li>Contact</li></a>
+    </ul>
+    <form action="/sub" method="post">
+      <input type="text" name="name" />
+      <input type="text" name="pas" />
+      <button type="submit">Submit</button>
+    </form>
+    <a href="/new">New User?? Create Account</a>
+  </body>
+</html>
